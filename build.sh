@@ -1,14 +1,23 @@
 
 #!/bin/bash
 
+platform='linux'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  platform='mac'
+fi
+
+if [[ $platform == 'mac' ]]; then
+  brew install python3
+else
+  echo "====================================================================="
+  echo "install pip:"
+  echo "sudo apt-get install python-pip"
+  sudo apt-get install python3-pip
+fi
+
 echo "====================================================================="
 echo "make alias python=python3"
 alias python=python3
-
-echo "====================================================================="
-echo "install pip:"
-echo "sudo apt-get install python-pip"
-sudo apt-get install python3-pip
 
 echo "====================================================================="
 echo "install virtualenv"
