@@ -4,13 +4,22 @@
 platform='linux'
 if [[ "$OSTYPE" == "darwin"* ]]; then
   platform='mac'
+elif [[ $(cat /etc/issue) == "Amazon Linux AMI"* ]]; then
+  platform='amz_linux'
 fi
 
+echo "====================================================================="
+echo "install python3 and pip3:"
 if [[ $platform == 'mac' ]]; then
+  echo "brew install python3"
   brew install python3
+elif [[ $platform == 'amz_linux' ]]; then
+  echo "sudo yum install python35"
+  sudo yum install python35
+
+  echo "sudo easy_install-3.5 pip"
+  sudo easy_install-3.5 pip
 else
-  echo "====================================================================="
-  echo "install pip:"
   echo "sudo apt-get install python-pip"
   sudo apt-get install python3-pip
 fi
