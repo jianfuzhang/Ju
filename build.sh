@@ -27,7 +27,7 @@ sudo pip3 install virtualenv
 echo "====================================================================="
 echo "setup virtual env:"
 echo "virtualenv ENV"
-virtual ENV
+virtualenv ENV
 echo "source ENV/bin/activate"
 source ENV/bin/activate
 
