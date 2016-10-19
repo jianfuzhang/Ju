@@ -45,3 +45,6 @@ echo "install Django:"
 echo "pip3 install Django"
 pip3 install Django 
 
+# lib for third-party auth
+pip3 install python-social-auth
+
